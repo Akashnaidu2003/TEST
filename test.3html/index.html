@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HTML + CSS Test </title>
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
@@ -26,8 +26,8 @@
 
 
     h1{
-        font-family: Arial;
-        text-shadow: 4px 5px 7px ;
+        font-family: Arial, sans-serif;
+        text-shadow: 2px 4px 6px gray;
     }
     p{
         font-size: 1.2rem;
@@ -35,95 +35,218 @@
         text-align: justify;
     }
 
+
    .card{
     border: 1px solid gray;
-    padding: 20px 10px;
-    max-width: 300px;
+    padding: 20px;
+    margin: 10px;
+    max-width: 350px;
    }
 
-
+ 
    .navbar{
     display: flex;
-    padding: 10px;
+    padding: 20px;
+    gap: 15px;
    }
+   .navbar a{
+    text-decoration: none;
+    font-size: 18px;
+   }
+
 
    .gallery{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    max-width: 300px;
+    max-width: 350px;
    }
-   
+
    @media(max-width: 600px) {
-    .gallery{
+     .gallery{
         grid-template-columns: 1fr;
-    }
-
+       }
    }
 
-   .color{
+
+   .hover-button {
     background-color: blue;
     color: white;
-    transition: background-color 0.3s;
+    border: none;
     padding: 10px 20px;
     cursor: pointer;
-
+    transition: background-color 0.3s;
    }
-   .color:hover{
+   .hover-button:hover{
     background-color: darkblue;
    }
 
-   .scale{
+
+   .scale-button {
     width: 150px;
     height: 50px;
+    background-color: lightblue;
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+    }
+    .scale-button:hover{
+        transform:scale(1.2);
+    }
 
-   }
-   .scale:hover{
-    transform: scale(1.2);
-   }
-
-   .box{
-    background-color:violet;
-    width: 90px;
-    height: 50px;
-    top: 50%;
-    left: 0;
-    animation: slide 3s linear infinite;
-    
+   
+   .box {
+    width: 220px;
+    height:40px;
+    background-color: blueviolet;
+    position: relative;
+    animation: slide 3s linear infinite;  
    }
    @keyframes slide {
-    from  {
-        left: 0;
-    }
-    to {
-        left: 300px;
-    }
+       from {
+           left: 0;
+       }
+       to {
+           left: 300px;
+       }
    }
 
-  div{
+
+   .overlap-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .box1 {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    position: absolute;
+   }
+   .box2 {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+   }
 
-  }
+   
+   header, main {
+    background-color: var(--main-color);
+    padding: 20px;
+    text-align: center;
+   }
+   @media (max-width: 768px) {
+         :root{
+            --main-color: lightcoral;
+         }
+   }
+   @media (min-width: 1024px) {
+         :root{
+            --main-color:lightblue;
+         }
+   }
 
 
-.box1 {
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  position: absolute;
+   .hero{
+    background-image: url(images/img\ 5.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    display: flow-root;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(244, 11, 11);
+   }
+   .hero h1 {
+    font-size: 5rem; 
+    font-weight: bold; 
 }
 
-.box2 {
-  width: 100px;
-  height: 100px;
-  background-color: blue;
-  top: 10px;
-  left: 10px;
-  z-index: 1;
+   @media (max-width: 768px) {
+       .hero {
+        height: 400px;
+       }
+   }
+
+
+   h2 {
+    font-size: 4rem;
 }
+
+@media (max-width: 900px) {
+    h2 {
+        font-size: 3rem; 
+    }
+}
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 2rem; 
+    }
+}
+
+
+.galleryone{
+    display: flex;
+    gap: 10px;
+}
+.galleryone img {
+    width: 150px;
+    height: 100px;
+    filter:grayscale(100%);
+    transition: filter 0.3s;
+}
+.galleryone img:hover {
+    filter: grayscale(0%);
+}
+
+
+::selection {
+    background-color: yellow;
+    color: red;
+}
+
+
+.image-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .image-container img {
+        width: 350px; 
+        height: auto;
+        display: block;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(128, 0, 128, 0.7); 
+        padding: 10px 3px;
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 5px;
+    }
 </style>
 <body>
-    <!--task 1-->
+
+    <h1>HTML + CSS Test </h1>
+
+    <!-- Task 1 -->
+
     <ul class="link-list">
         <li><a href="#">Item 1</a></li>
         <li><a href="#">Item 2</a></li>
@@ -132,48 +255,99 @@
         <li><a href="#">Item 5</a></li>
     </ul>
 
-     <!--task 2-->
-    <h1>Simple Webpage</h1>
+     <!-- Task 2 -->
+
+    <h1>Welcome to My Website</h1>
     <p> Create a simple webpage with a title and a paragraph of text.</p>
 
-    <!-- task 3-->
+    <!-- Task 3 -->
 
     <div class="card">
-        <h2> CREATE A CARD</h2>
-        <p>Create a card with a border, padding, and margin</p>
+       
+        <p>This is a simple card with a border, padding, and margin.</p>
      </div>
 
 
-    <!--task 4-->
+    <!-- Task 4 -->
+
     <nav class="navbar">
-        <a href="">six</a>
-        <a href="">seven</a>
-        <a href="">eight</a>
+        <a href="#">About</a>
+        <a href="#">Super</a>
+        <a href="#">Cars</a>
     </nav>
 
-    <!--task 5-->
+    <!-- Task 5 -->
+
     <div class="gallery">
-        <img src="images/img 1.jpg" alt="Image 1" style="height: 150px;  width:150px;">
-        <img src="images/img 2.jpg" alt="Image 2"  style="height: 150px; width:150px;">
+        <img src="images/img 1.jpg" alt="Image 1" style="height:150px;  width:150px;">
+        <img src="images/img 2.jpg" alt="Image 2" style="height:150px;  width:150px;">
         <img src="images/img 3.jpg" alt="Image 3" style="height:150px;  width:150px;">
         <img src="images/img 4.jpg" alt="Image 4" style="height:150px;  width:150px;">
     </div>
 
-    <!--task 6-->
-    <button class="color">CREATE</button><br>
+    <!-- Task 6 -->
 
-    <!--task 7-->
+    <button class="hover-button">
+        Click Me
+    </button><br>
 
-    <button class="scale"> Hover Me</button>
+    <!-- Task 7 -->
 
-    <!--task 8-->
+    <button class="scale-button">
+        Hover Me
+    </button>
+
+    <!-- Task 8 -->
+
     <div class="box">
-       CODEGNAN 
+        Box that moves from left to right.
     </div>
 
-    <!--task 9-->
-    <div class="box1"></div>
-    <div class="box2"></div>
+    <!-- Task 9 -->
+
+    <div class="overlap-container">
+         <div class="box1"></div>
+         <div class="box2"></div>
+    </div>
+
+    <!-- Task 10 -->
+
+    <header>Header Section</header>
+    <main>Main Content</main>
+
+    <!-- Task 11 -->
+
+    <div class="hero">
+        <h1>JANASENA</h1>
+        <p> Create a hero section with a heading and a background image.</p>
+    </div>
+
+    <!-- Task 12 -->
+
+    <h2>My Title</h2>
+    <p>Create a Webpage with a Title and a Description.</p>
+
+    <!-- Task 13 -->
+
+    <div class="galleryone">
+        <img src="images/img 6.jpg" alt="Image 6" style="height:400px;  width:350px;">
+        <img src="images/img 7.jpg" alt="Image 7" style="height:400px;  width:350px;">
+        <img src="images/img 8.jpg" alt="Image 8" style="height:400px;  width:350px;">
+        <img src="images/img 9.jpg" alt="Image 9" style="height:400px;  width:350px;">
+    </div>
+
+    <!-- Task 14 -->
+
+    <p> Change the styling of text selection</p>
+
+
+    <!-- Task 15 -->
+     
+    <h3>Preview:</h3>
+    <div class="image-container">
+        <img src="images/img 10.jpg" alt="Purple Flower">
+        <div class="overlay">Hello, World</div>
+    </div>
 
     
 
